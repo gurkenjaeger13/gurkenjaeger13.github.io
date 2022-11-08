@@ -43,3 +43,7 @@ table {
     padding: 2pt;
     background-color: rgb(233, 233, 233);
 }
+
+img.calcSvg {
+    padding-top: 3pt;
+}

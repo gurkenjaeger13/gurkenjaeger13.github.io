@@ -11,28 +11,34 @@
                 <td colspan="4" id="result">0</td>
             </tr>
             <tr>
+              <td class="button" onclick="addNumToStr('(','(')">(</td>
+              <td class="button" onclick="addNumToStr(')',')')">)</td>
+              <td class="button" onclick="removeChar()"><img class="calcSvg" src="../images/icon_delete.svg"></td>
+              <td class="button" onclick="addNumToStr('/','÷')">÷</td>
+            </tr>
+            <tr>
               <td class="button" onclick="addNumToStr(7,7)">7</td>
               <td class="button" onclick="addNumToStr(8,8)">8</td>
               <td class="button" onclick="addNumToStr(9,9)">9</td>
-              <td class="button" onclick="addNumToStr('/','÷')">÷</td>
+              <td class="button" onclick="addNumToStr('*','×')">×</td>
             </tr>
             <tr>
                 <td class="button" onclick="addNumToStr(4,4)">4</td>
                 <td class="button" onclick="addNumToStr(5,5)">5</td>
                 <td class="button" onclick="addNumToStr(6,6)">6</td>
-                <td class="button" onclick="addNumToStr('*','×')">×</td>
+                <td class="button" onclick="addNumToStr('-','−')">−</td>
               </tr>
               <tr>
                 <td class="button" onclick="addNumToStr(1,1)">1</td>
                 <td class="button" onclick="addNumToStr(2,2)">2</td>
                 <td class="button" onclick="addNumToStr(3,3)">3</td>
-                <td class="button" onclick="addNumToStr('-','−')">−</td>
+                <td class="button" onclick="addNumToStr('+','+')">+</td>
               </tr>
               <tr>
                 <td class="button" onclick="clearStr()">C</td>
                 <td class="button" onclick="addNumToStr(0,0)">0</td>
+                <td class="button" onclick="addNumToStr('.','.')">.</td>
                 <td class="button" onclick="calculateStr()">=</td>
-                <td class="button" onclick="addNumToStr('+','+')">+</td>
               </tr>
           </table>
           <script>
@@ -44,16 +50,33 @@
               cosmeticValue
               document.getElementById("result").innerHTML=cosmeticValue
             }
+            function removeChar(){
+              stringValue = stringValue.slice(0, stringValue.length - 1)
+              cosmeticValue = cosmeticValue.slice(0, cosmeticValue.length - 1)
+              if ( stringValue == "" ) {
+                document.getElementById("result").innerHTML="0"
+              }
+              else {
+                document.getElementById("result").innerHTML=cosmeticValue
+              }
+
+            }
             function clearStr (){
               stringValue = ""
               cosmeticValue = ""
-              document.getElementById("result").innerHTML="0";
+              document.getElementById("result").innerHTML="0"
             }
             function calculateStr (){
               solution = eval(stringValue)
               stringValue = String(solution)
               cosmeticValue = String(solution)
-              document.getElementById("result").innerHTML=solution;
+              document.getElementById("result").innerHTML=solution
+              console.log(solution)
+              if ( isNaN(solution) || solution == "Infinity" || solution == "-Infinity" || solution == undefined ) {
+                solution = ""
+                stringValue = solution
+                cosmeticValue = solution
+              }
             }
           </script>
     </body>
