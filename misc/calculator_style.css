@@ -1,0 +1,45 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table,th,tr,td {
+    border: 0px solid rgb(225, 225, 225);
+    border-radius: 7px;
+    font-size: 18pt;
+    color: rgb(98, 98, 98);
+}
+
+td {
+    width: 40pt;
+    height: 40pt;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px rgb(214, 214, 214);
+}
+
+#result {
+    text-align: right;
+    padding-right: 9pt;
+}
+
+td.button {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+td.button:hover{
+    background-color: rgb(234, 234, 234);
+}
+
+td.button:active {
+    background-color: rgb(181, 181, 181);
+    scale: 0.95;
+}
+
+table {
+    border-radius: 4px;
+    border-spacing: 4pt;
+    padding: 2pt;
+    background-color: rgb(233, 233, 233);
+}
