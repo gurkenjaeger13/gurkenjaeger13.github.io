@@ -72,10 +72,14 @@
             function calculateStr (){
                 solution = eval(stringValue)
                 console.log("Solution:",solution,"StringValue:",stringValue)
-                if ( stringValue.length > 13 || String(solution).length > 13) {
+                if ( (stringValue.length > 13 || String(solution).length > 13) ) {
                     solution = solution.toExponential(2)
                     console.log("Solution:",solution,"StringValue:",stringValue,"New solution:",solution)
                 }
+                //else {
+                //    const roundAccurately = (number, decimalPlaces) => Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces)
+                //    roundAccurately(, 4)
+                //}
                 stringValue = String(solution)
                 cosmeticValue = String(solution)
                 
