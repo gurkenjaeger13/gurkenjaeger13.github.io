@@ -2,24 +2,28 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+body {
+    margin-left: 1rem;
+}
+
 table,th,tr,td {
     border: 0px solid rgb(225, 225, 225);
-    border-radius: 7px;
-    font-size: 18pt;
+    border-radius: 10px;
+    font-size: 24pt;
     color: rgb(98, 98, 98);
 }
 
 td {
-    width: 40pt;
-    height: 40pt;
+    width: 50pt;
+    height: 50pt;
     text-align: center;
     background-color: white;
-    box-shadow: 2px 2px rgb(214, 214, 214);
+    box-shadow: 3px 3px rgb(214, 214, 214);
 }
 
 #result {
     text-align: right;
-    padding-right: 9pt;
+    padding-right: 13pt;
 }
 
 td.button {
@@ -38,9 +42,9 @@ td.button:active {
 }
 
 table {
-    border-radius: 4px;
-    border-spacing: 4pt;
-    padding: 2pt;
+    border-radius: 6px;
+    border-spacing: 7pt;
+    padding: 3pt;
     background-color: rgb(233, 233, 233);
 }
 
