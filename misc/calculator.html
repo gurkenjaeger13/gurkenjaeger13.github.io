@@ -71,10 +71,10 @@
             }
             function calculateStr (){
                 solution = eval(stringValue)
-                console.log("Solution:",solution)
-                if ( stringValue > 13 ) {
-                    solution = solution.toExponential(4)
-                    console.log("New solution:",solution)
+                console.log("Solution:",solution,"StringValue:",stringValue)
+                if ( stringValue.length > 13 || String(solution).length > 13) {
+                    solution = solution.toExponential(2)
+                    console.log("Solution:",solution,"StringValue:",stringValue,"New solution:",solution)
                 }
                 stringValue = String(solution)
                 cosmeticValue = String(solution)
