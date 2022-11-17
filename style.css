@@ -75,3 +75,13 @@ a.bottom_link {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+img.full{
+  width: auto; 
+  height: auto; 
+  max-width: 100%;
+}
+
+p{
+  line-height: 125%;
+}
