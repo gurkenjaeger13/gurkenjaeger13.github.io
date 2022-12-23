@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Horrorspiel in der Unreal Engine</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <h1>Horrorspiel in der Unreal Engine</h1>
+    
+    <h2>Vorwort</h2>
+
+    <p>
+        Du möchtest mein Spiel selbst ausprobieren? Unter dem folgenden Link kannst du das Spiel gratis herunterladen:
+    </p>
+
+    <p class="link"><a href="https://freshefisch.itch.io/the-hunt-for-power" target="_blank" rel="noopener noreferrer">https://freshefisch.itch.io/the-hunt-for-power</a></p>
+
+    <p>
+        Wichtig: Das Spiel ist ausschliesslich für Windows 10/11 Computer. Ausserdem braucht es etwa 500 Megabyte Speicherplatz und läuft auf fast jedem Computer flüssig.
+    </p>
+
+    <p>
+        Die Unreal Engine 5.0.3 Projektdatei, in welcher man den Code anschauen kann, ist unter folgen-dem Link verfügbar:
+    </p>
+
+    <p class="link"><a href="https://www.linus-abegg.ch/redirect/Maturitaetsarbeit-Projektdatei" target="_blank" rel="noopener noreferrer">https://www.linus-abegg.ch/redirect/Maturitaetsarbeit-Projektdatei</a></p>
+
+    <h2>1. Einleitung</h2>
+
+    <p>
+        Im Rahmen meiner Maturitätsarbeit habe ich zum ersten Mal ein Videospiel erstellt. Ich bin seit klein auf begeisterter „Gamer“, und das Treiben hinter den Kulissen hat mich schon immer interes-siert. Vor einigen Jahren hatte mich die Spielentwicklung bereits gepackt, doch schon nach nicht allzu langem experimentieren merkte ich, dass der ganze Prozess zu komplex für mich war. 
+    </p>
+    <p>    
+        Dann, am 26. Mai 2021, wurde die Testversion von Unreal Engine 5, eine neue Vollversion der Game Engine Unreal Engine, veröffentlicht. Eine Game Engine ist ein Programm, welches das Erstellen eines Spiels stark vereinfacht, indem es viele wichtige Features eingebaut hat, die nicht von Grund auf programmiert werden müssen. Neben vielen kleinen neuen Features war in der neu-en Version auch ein grosses dabei: Lumen. Mit dieser speziellen Beleuchtungstechnik kann realisti-sches Licht in Echtzeit simuliert werden. Im Internet wurde darauf sehr viel über dieses Feature diskutiert. Nutzer teilten ihre Projekte und spornten sich so gegenseitig an, noch schönere und rea-listischere Szenen zu erstellen.
+    </p>
+
+    <h4>Abbildung 1: Screenshot von einem Unreal Engine 5 Projekt</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_01.jpg" alt="">
+    <p class="desc">Das Bild zeigt ein Muster-Projekt, das von Epic Games selber erstellt wurde, um die neuen Features zu demonstrieren.</p>
+
+    <p>
+        Durch diese erhöhte Präsenz im Internet habe auch ich wieder von Unreal Engine gehört. Begeis-tert durch die neuen Features habe ich mich im Internet nach Projekten umgeschaut, die von den neuen Features Gebrauch machten. Ich war fasziniert von den wunderschönen und absolut echt-aussehenden digitalen Kreationen. Ich erinnerte mich an meine gescheiterten Anfangsversuche von damals, doch in den vergangenen Jahren hatte ich sehr viel neues Wissen in der Informatik erwor-ben, zum Beispiel auch die Grundlagen im Programmieren. Also fasste ich neuen Mut und ent-schloss mich, als Maturitätsarbeit selbst ein Spiel zu erstellen.
+    </p>
+
+    <h4>Abbildung 2: Drei Ausschnitte aus «etchū-daimon station»</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_02.jpg" alt="">
+    <p class="desc">Nutzer «subjectn» teilte im Mai 2022 ein realistisch aussehendes Video von einem Bahnhof. Das ganze Video wurde ausschliesslich in Unreal Engine hergestellt. Auf YouTube wurde das Video über 2 Millionen Mal angeschaut.</p>
+
+    <h2>2. Entstehungsprozess</h2>
+
+    <h3>2.1. Planung</h3>
+
+    <p>
+        Als Erstes legte ich die Art des Spieles fest. Schon einige Monate vorher hatte ich begonnen, mich für Horror-Spiele zu begeistern, denn es gibt neben den bekanntesten Spielen wie zum Beispiel jene der «Resident Evil»-Reihe, hinter denen ein riesiges Team mit einem ebenso grossen Budget steckt, unzählige Indie Games, die von Einzelpersonen oder kleinen Teams mit meist sehr gerin-gem oder gar keinem Budget entwickelt werden. Diese Spiele sind viel simpler als diejenigen der grossen Hersteller und kosten selten mehr als ein paar Franken, jedoch gibt es sehr viele Leute, die sich stark an ihnen begeistern.
+    </p>
+
+    <h4>Abbildung 3: «Resident Evil: Village»</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_03.png" alt="">
+    <p class="desc">Auf dem Bild in der Mitte ist eine der Haupt-Antagonisten des Spieles zu sehen: «Lady Dimitrescu»</p>
+
+    <p>
+        Oft wird bei diesen Indie Games die Bildqualität extra stark reduziert, um die Grafik von alten Spielkonsolen wie jene der Play Station 2 zu emulieren. Unter anderem durch die reduzierte Auflö-sung fällt es schwerer, Dinge, die weit weg sind, zu erkennen – was sich natürlich hervorragend für Horror eignet. Zusätzlich gefällt mir dieser «Look», also wollte ich ihn auch für mein Spiel adap-tieren. Ausserdem habe ich mich dafür entschieden, dass mein Spiel aus der ersten Perspektive (First Person) gespielt werden soll, also aus Sicht des virtuellen Charakters. Das ist die Norm bei Horror-Spielen.
+    </p>
+
+    <h4>Abbildung 4: «It Steals»</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_04.png" alt="">
+    <p class="desc">«It Steals» wurde von einer Person entwickelt. Trotzdem begeistert das Spiel sehr viele Gamer und Gamerinnen. </p>
+
+    <p>
+        Beim Gameplay, also was man eigentlich im Spiel macht, habe ich mich für etwas entschieden, was bei Indie Games verbreitet ist: Der Spieler muss eine gewisse Anzahl Gegenstände aufspüren, während er von einem Computergegner, meist einem Monster, verfolgt wird. Nur wenn der Spieler alle Gegenstände hat, kann er dem Gegner endgültig entkommen und das Spiel gewinnen. «Slen-der: The Eight Pages» (2012) hat dieses Spielprinzip bekannt gemacht. Im Spiel muss der Spieler acht Blätter finden, wobei er vom «Slender Man» verfolgt wird. Meine Adaption dieser Idee sieht wie folgt aus: In meinem Spiel muss der Spieler 6 zufällig verteilte Batterien in einem labyrinthar-tigen Level finden, um einen Aufzug aktivieren zu können, mit dem er aus dem Labyrinth fliehen kann. Dabei wird er von einem Monster gejagt.
+    </p>
+
+    <h4>Abbildung 5: «Slender: The Eight Pages»</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_05.png" alt="">
+    <p class="desc">Ausschnitt aus «Slender: The Eight Pages». Rechts im Bild ist «Slender Man» zu sehen.</p>
+
+    <h3>2.2. Game Engine: Unreal Engine</h3>
+
+    <p>
+        Unreal Engine ist eine von Epic Games entwickelte Game Engine, die beim Entwickeln von Spie-len genutzt wird. Das besondere an ihr ist, dass man gratis auf alle Features Zugriff hat, egal für welchen Zweck oder mit welchem Budget man sie nutzen möchte. Ein paar nennenswerte Spiele, die mit Unreal Engine entwickelt wurden, sind «Fortnite» (2017), «Sea Of Thieves» (2018), «Star Wars Jedi: Fallen Order» (2019) und «Yoshi’s Crafted World» (2019).
+    </p>
+
+    <h4>Abbildung 6: Unreal Engine 5 Benutzeroberfläche</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_06.png" alt="">
+    <p class="desc">Auf diesem Bild kann man den «Level Editor» von Unreal Engine 5 sehen. Hier wird die digitale Welt gestaltet.</p>
+
+    <p>
+        Programmieren in der Unreal Engine sieht meistens anders aus als in ähnlichen Programmen: An-statt mit Text zu programmieren, wie zum Beispiel bei Game Engine Unity, werden sogenannte Blueprints verwendet. In Blueprints wird programmiert, indem verschiedene Nodes aneinanderge-hängt werden. Man kann aber auch mit C++, eine konventionelle Programmiersprache, program-mieren.
+    </p>
+
+    <h4>Abbildung 7: Blueprint Ausschnitt (Player)</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_07.png" alt="">
+    <p class="desc">Der obige Blueprint stammt aus meinem Spiel. Er erlaubt dem Spieler, sich zu bewegen und sich umzuschauen.</p>
+
+    <h3>2.3. Erstellen der 3D-Modelle</h3>
+
+    <p>
+        Wenn man in seinem Spiel beispielsweise eine Taschenlampe haben möchte, dann muss man ein 3D-Modell einer Taschenlampe einfügen. Ein 3D-Modell enthält Informationen zu Form und Geo-metrie, aber auch zur Oberfläche, wie unter anderem zu Farbe und Rauheit (auf Englisch rough-ness). 3D-Modelle können auch vom Internet heruntergeladen werden, aber für meine Arbeit habe ich alle selbst hergestellt (ausgenommen das Modell des Monsters und die Texturen der Modelle). 
+    </p>
+    <p>
+        In Unreal Engine gibt es nur sehr einfache Werkzeuge für das Erstellen und Bearbeiten von 3D-Modellen. Viel weiter fortgeschritten ist dafür das 3D-Design- und Animationsprogramm Blender. Mit Blender kann man professionelle Animationsfilme à la Disney erstellen, aber auch 3D-Modelle designen und bearbeiten. Für meine Arbeit habe ich mich lediglich auf das letztere fokussiert.
+    </p>
+
+    <h4>Abbildung 8: Batterie in 3D-Designprogramm</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_08.png" alt="">
+    <p class="desc">Autobatterie mit Etikette</p>
+
+    <p>
+        3D-Modelle herstellen ist ein komplexer Prozess. Grob gesagt verläuft er wie folgt: Zuerst suche ich im Internet nach Bildern des Objekts, dass ich erstellen möchte. Als Nächstes beginne ich in Blender, die Geometrie zu erstellen. Dafür gibt es verschiedene Werkzeuge: Das eine ist sehr ma-thematisch angelegt, mit Einheiten und Koordinaten, beim anderen skulptiert man mit der Maus, wie zum Beispiel beim Töpfern. In meinem Spiel habe ich alle 3D-Modelle mit dem mathemati-schen Werkzeug erstellt, da die Objekte (Autobatterie, Ausgangs-Schild, etc.) sehr klar definierte Ecken haben. Das Skulptier-Werkzeug eignet sich besser für organische Objekte, wie zum Beispiel ein Brötchen oder einen Donut. Hierbei erstelle ich zunächst die Grundform des Objektes, im Fall der Autobatterie einen Würfel. Dann passe ich die Form an, verformte zum Beispiel den Würfel zu einem Quader, der mehr der Form einer Autobatterie ähnelt. Dann füge ich die kleineren Details der Oberfläche hinzu. Im Fall der Autobatterie einen überragenden Rand auf deren Oberseite und zwei Anschlüsse obendrauf. Nun ist der geometrische Teil des Modells fertig, jedoch fehlt noch das Aussehen.
+    </p>
+    <p>
+        Um dem 3D-Modell eine Oberfläche zu geben, verwendet man Bilder, sogenannte Texturen. Wenn die Textur hinzugefügt wird, wird sie zunächst meist falsch dargestellt. Die Textur hat nämlich keine Ahnung, wie sie auf das 3D-Modell projiziert werden soll. Dafür wird eine sogenannte UV-Map benötigt. Mit ihr kann festgelegt werden, welcher Teil der Textur auf welchen Teil des 3D-Modells projiziert werden soll. In meinem Fall der Autobatterie musste ich eine solche UV-Map verwenden, damit die Etikette auf der richtigen Seite und richtig ausgerichtet ist, und damit die Anschlüsse auf der oberen Seite der Batterie die richtigen Farben haben. Bei komplexeren 3D-Modellen werden oft auch noch weitere Texturen verwendet, zum Beispiel eine Normal-Map, die Informationen zur Oberflächenbeschaffenheit des 3D-Modells enthält. In meinem Spiel habe ich aber solche zusätzlichen Texturen wegen der reduzierten Grafik nicht verwendet, da diese kleinen Details nicht sichtbar wären.
+    </p>
+
+    <h4>Abbildung 9: Textur der Batterie mit UV-Map in Blender</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_09.png" alt="">
+    <p class="desc">Mit der obigen UV-Map wird der Batterie an den richtigen Orten die richtige Oberfläche zugeordnet.</p>
+
+    <h3>2.4. Programmieren mit Blueprints</h3>
+
+    <p>
+        Wie schon in Abschnitt 2.2. erklärt, wird in der Unreal Engine meist mit sogenannten Blueprints programmiert. Weil sie mir einfacher als C++ erschienen sind und weil die meisten Internet-Tutorials sie verwenden, habe ich mich dafür entschieden, Blueprints zu verwenden.
+    </p>
+    <p>
+        In Unreal Engine gibt es verschiedene Klassen von Blueprints. Viele von ihnen sind optional, das heisst, sie werden für ein funktionierendes Spiel nicht benötigt, jedoch für bestimmte Funktionen. Ein Beispiel ist der HUD-Blueprint, mit dem Informationen auf dem Bildschirm dargestellt werden können. Ein HUD ist zwar für ein Spiel nicht zwingend notwendig, wird aber in praktisch allen Spielen verwendet, zum Beispiel für das Anzeigen der Leben des Spielers. 
+    </p>
+    <p>
+        Hier eine Liste der wichtigsten Blueprint-Klassen: 
+    </p>
+
+    <p>[Tabelle]</p>
+
+    <h4>Abbildung 10: Gängige Blueprint-Klassen</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_10.png" alt="">
+    <p class="desc">Screenshot Unreal Engine 5</p>
+
+    <p>
+        In einem Blueprint wird mit Nodes anstatt mit Text programmiert. Die einzelnen Nodes in einem Blueprint kann man sich als Bausteine vorstellen. Die meisten dieser Bausteine haben jeweils einen weissen Ein- und Ausgang. So kann man den weissen Ausgang einer Node an den Eingang einer anderen anhängen, so dass die Nodes in dieser Reihenfolge ausgeführt werden, ähnlich wie bei Scratch, einem Programm, das primär genutzt wird, um Kindern das Programmieren näher zu brin-gen. Gewisse Nodes haben nur einen weissen Ausgang und keinen Eingang. Das sind in der Regel sogenannte Event-Nodes. Von ihnen wird eine Aktion gestartet. Beispielsweise gibt es eine Begin-Play Node, welche beim Start des Spiels ein Signal aussendet.
+    </p>
+    <p>
+        Neben den weissen Ein- und Ausgängen der Nodes gibt es auch noch weitere, je nach Node. Die verschiedenen Farben von den Ein- und Ausgängen stehen zum Beispiel für Vektoren (Gelb), für Floats, also Dezimalzahlen (Grün) und für Booleans, also Wahr- oder Falschwerte (Rot). Diese Werte können dann von einem Ausgang einer Node in den Eingang einer anderen Node eingeführt werden, um den Wert zu übermitteln, oder die Werte können auch in einer Variabel für den späte-ren Gebrauch gespeichert werden. 
+    </p>
+
+    <h4>Abbildung 11: Blueprint Ausschnitt (GameMode)</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_11.png" alt="">
+    <p class="desc">Der obige Ausschnitt aus meinem GameMode Blueprint sucht mit der Get All Actors Of Class [Battery] Node nach allen Batterien im Level. Dann findet er mit der Lenght Node die Anzahl heraus und speichert diese in zwei Variabeln, die verwendet werden, um dem Spieler dann mitzuteilen, wie viele Batterien er noch braucht.</p>
+
+    <p>
+        In meinem Spiel habe ich eine Vielzahl von Blueprints verwendet, unter anderem auch von den in der Tabelle in Abschnitt 2.4. erwähnten mindestens jeden einmal. Den Actor Blueprint habe ich aber mit Abstand am häufigsten verwendet: Für die Lampen an den Decken, die Batterien, die der Spieler aufsammeln muss, das Monster und den Lift.
+    </p>
+
+    <h3>2.5. Level-Design</h3>
+
+    <p>
+        Beim Leveldesign bin ich wie folgt vorgegangen: Zuerst habe ich eine Grundfläche festgelegt, um darauf das Labyrinth zu erstellen. Ich habe mich nach etwas ausprobieren für 75 mal 75 Meter entschieden, damit das Level nicht riesig, aber doch gross genug ist, um die Orientation zu er-schweren. Sodann habe ich die Wände hinzugefügt. Dabei habe ich mich für ein Gittersystem von 2 mal 2 Meter entschieden. Die Wände fügte ich jeweils zufällig hinzu, aber immer so, dass die maximale Sichtdistanz nicht allzu weit ist. Im nächsten Schritt habe ich das Level mehrmals virtuell erkundet und die Wände angepasst, bis ich zufrieden war.
+    </p>
+
+    <h4>Abbildung 12: Layout meines Spiels</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_12.png" alt="">
+    <p class="desc">Fogelperspektive von meinem Level in Unreal Engine</p>
+
+    <p>
+        Nachdem ich das Grundlayout fertig hatte, wandte ich mich den kleineren Details zu. Ich habe verschiedene Graffitis und Bluteffekte im Level verteilt, um das Level etwas abwechslungsweiser zu Gestallten. Zudem habe ich einige Ausgangschilder verteilt, die jeweils in die Richtung des Lifts zeigen. So kann sich der Spieler besser orientieren und findet den Lift, wenn er alle Batterien hat. Zum Schluss habe ich noch Target Points hinzugefügt. Hierzu habe ich im Level Blueprint pro-grammiert, dass die Batterien an einer zufälligen Auswahl dieser Punkte erscheinen. So kann sich der Spieler nicht einfach die Orte merken.
+    </p>
+
+    <h4>Abbildung 13: Level Design Details</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_13.png" alt="">
+    <p class="desc">Am Boden ist eine grosse Blutlache zu sehen und an der Wand ein Graffiti.</p>
+
+    <h2>3. Endprodukt</h2>
+
+    <p>
+        Wie erwähnt, ist der Spieler in meinem Spiel in einem von einem Monster bewohnten Labyrinth gefangen und muss 6 Batterien finden, um einen Lift zu aktivieren, mit dem er entkommen kann.
+    </p>
+    <p>
+        Der Spieler selbst hat kein 3D-Modell, was aber gar nicht benötigt wird, da das Spiel in First Per-son stattfindet. Der Spieler kann sich durch das Bewegen der Maus umschauen und mit den Tasten W, A, S und D in alle 4 Richtungen laufen. Ausserdem kann er mit der Taste F eine Taschenlampe aktivieren, um sich auch in den dunklen Teilen des Levels orientieren zu können. Die Taschenlam-pe basiert auf einem Cooldown Prinzip, das heisst, dass die Taschenlampe nur für eine begrenzte Zeit verwendet werden kann und dann wieder passiv aufgeladen werden muss, indem sie nicht verwendet wird. Ich habe das so programmiert, damit der Einsatz der Taschenlampe nur im Notfall erfolgt und der Spieler sich immer überlegen muss, ob er sie wirklich braucht. Die Taschenlampe wurde ausserdem mit einem Knopfdruck-Soundeffekt ausgestattet, der beim Ein- und Ausschalten ertönt.
+    </p>
+
+    <h4>Abbildung 14: Blueprint der Taschenlampe</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_14.png" alt="">
+    <p class="desc">Der vollständige Code meiner Taschenlampe. Der Code kann zum genaueren Anschauen heruntergeladen werden (siehe </p>
+
+    <p>
+        Um die Bewegung des Spielers noch etwas realistischer zu machen, fügte ich beim Bewegen ein geringes Kamerawackeln ein, um ein Nicken des Kopfes zu simulieren. Im gleichen Intervall fügte ich auch Schritt-Soundeffekte ein, welche das Laufen realistischer erscheinen lassen. Ein Problem war dabei, dass die Schritteffekte viel zu repetitiv waren, da immer dieselbe Audiodatei abgespielt wurde. Deshalb habe ich schliesslich insgesamt 6 leicht verschiedene Audiodateien importiert und programmiert, dass jeweils eine Audiodatei zufällig ausgewählt und abgespielt wird. Zusätzlich habe ich eine zufällige Variation von Lautstärke und Tonhöhe der Datei programmiert. Damit er-scheint insgesamt die Bewegung des Spielers sehr realistisch.
+    </p>
+    <p>
+        Bei den Batterien habe ich mich für Autobatterien entschieden, da diese eine gewisse Grösse auf-weisen und für den Spieler gut sichtbar sind. Beim Lift habe ich selbst ein simples 3D-Modell von einem industriellen Lift angefertigt, also ohne Türen oder Wänden, da ich fand, dass das besser zum Level passt.
+    </p>
+    <p>
+        Die Verteilung der Batterien erscheint dem Spieler, wie bereits erwähnt, zufällig. Das Spiel ent-scheidet sich beim Spielstart für eine von mehreren möglichen Verteilungen der Batterien. Die Batterien sind also nicht vollständig zufällig platziert, damit die Batterien gleichmässig verteilt sind. Der Spieler wird zu Beginn des Spiels jeweils im Lift gespawnt.
+    </p>
+
+    <h4>Abbildung 15: Batterie in meinem Spiel</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_15.png" alt="">
+    <p class="desc">Screenshot mit Batterie in der Mitte</p>
+    
+    <h4>Abbildung 16: Lift in 3D-Designprogramm </h4>
+    <img src="images_maturitaetsarbeit/Abbildung_16.png" alt="">
+    <p class="desc">Mein Aufzug in Blender</p>
+    
+    <p>
+        Das Monster existiert bei Spielbeginn noch gar nicht. Erst wenn der Spieler die ersten Batterien einsammelt, wird das Monster in einer zufälligen Ecke des Labyrinths gespawnt. Das Monster stösst in einem ungefähr 8 Meter grossen Radius ein lautes Geräusch aus, womit der Spieler erah-nen kann, woher es kommt. Es bewegt sich zunächst mit der Hälfte der Geschwindigkeit des Spie-lers auf den Spieler zu. Mit jeder Batterie, die der Spieler einsammelt, erhöht sich die Geschwin-digkeit des Monsters, bis es am Schluss, wenn der Spieler alle Batterien hat, gleich schnell wie der Spieler ist. Der Spieler kann sich nun keinen Fehler mehr erlauben und muss direkt zum Lift ren-nen. Dabei helfen ihm die spärlich an der Decke gehängten Ausgangsschilder, die in die Richtung des Lifts zeigen. Wenn der Spieler dem Monster zu nahekommt, erscheint eine kleine Game-Over Sequenz, in der sich der Spieler zum Monster umdreht und das Monster in die Richtung des Spie-lers schlägt. Dann wird der Spieler zurück ins Hauptmenu geführt, wo er einen neuen Versuch starten kann. Falls der Spieler erfolgreich entkommt, wird auf dem Bildschirm gross «Escaped» dargestellt, und der Spieler wird danach ebenfalls zurück ins Hauptmenu geführt.
+    </p>
+
+    <h4>Abbildung 17: Monster 3D-Modell</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_17.png" alt="">
+    <p class="desc">Das 3D-Modell inklusive Texturen und Animationen wurde von mixamo.com heruntergeladen.</p>
+
+    <p>
+        Um auch wichtige Informationen wie eine Spielanleitung und die Quellen der nicht von mir selbst hergestellten Elemente meines Spieles in meinem Spiel unterbringen zu können, habe ich mich entschieden, ein einfaches Hauptmenu zu erstellen. Es gibt einen Knopf «Start» (Spiel starten) und «Quit» (Spiel beenden) und daneben auch «Help», welcher eine Spielanleitung zeigt, sowie «Cre-dits», welcher meine Quellen anzeigt.
+    </p>
+
+    <h4>Abbildung 18: Hauptmenu meines Spiels</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_18.png" alt="">
+    <p class="desc">Das Hauptmenu mit verschiedenen Optionen.</p>
+
+    <h4>Abbildung 19: «Help» Menu</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_19.png" alt="">
+    <p class="desc">«Help» Menu</p>
+
+    <h4>Abbildung 20: «Credits» Menu</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_20.png" alt="">
+    <p class="desc">«Credits» Menu</p>
+
+    <h2>4. Fazit</h2>
+
+    <p>
+        Bereits in meinem Grobkonzept habe ich detaillierte Ideen für das Gameplay festgelegt. Beispiels-weise das Monster sollte verschiedene Phasen haben, je nachdem wie viele Batterien der Spieler hat und ob es den Spieler sieht oder nicht. Beim Programmieren selbst aber habe ich schnell ge-merkt, dass meine Ideen, die ich für simpel hielt, sehr schwierig umzusetzen waren. Passende An-leitungen im Internet verwendeten eine Vielzahl der kompliziertesten Funktionen von Unreal Engi-ne, und schliesslich habe ich mich entschieden, die Funktionalität meines Monsters neu zu über-denken. So habe ich mich auf das in Abschnitt 3. beschriebene Prinzip festgelegt.
+    </p>
+    <p>
+        Meine Grundkenntnisse im Programmieren haben mir zwar sehr geholfen, um das Prinzip des Pro-grammierens mit Blueprints besser zu verstehen, jedoch haben sie nicht ausgereicht. Programmie-ren in Unreal Engine, oder besser gesagt in Game Engines allgemein, ist sehr viel komplexer als beispielsweise die Programmiersprache Python, mit der ich mich relativ gut auskenne. Zu den Fea-tures wie zum Beispiel der Taschenlampe gehört noch viel mehr als nur der Code des Cooldown-Effekts. Die Taschenlampe muss an der Richtigen Stelle hinzugefügt werden, damit sie sich mit dem Spieler bewegt, sie muss die richtige Helligkeit und den richtigen Winkel haben, und so wei-ter. Um zu verstehen, wie Unreal Engine richtig genutzt wird, habe ich zahllose Videoanleitungen auf YouTube angeschaut, welche oft sehr gut gemacht sind und für welche man nicht bezahlen muss.
+    </p>
+    <p>
+        Beim Verwirklichen meines Spieles gab es oft Momente, in denen etwas nicht funktioniert hat. Durch meine Grundkenntnisse im Programmieren war mir aber die Vorgehensweise beim Debug-ging (Englisch für Fehler beseitigen) bereits klar und so konnte ich in den meisten Fällen eine Lö-sung finden. In seltenen Fällen aber konnte ich ein Problem nicht lösen. Beispielsweise wollte ich eine Sprint-Funktion einbauen, jedoch habe ich es nicht geschafft, dass die Schritteffekte schneller abgespielt werden, und so sah das Sprinten nicht gut aus. Schlussendlich habe ich mich dann dafür entschieden, die Grundgeschwindigkeit des Spielers zu erhöhen und dafür keine Sprintfunktion hinzuzufügen. Rückblickend denke ich, dass das die richtige Entscheidung war. Ich hätte noch sehr viel mehr Zeit aufwenden können, nur um am Schluss möglicherweise trotzdem ohne Lösung dazu-stehen.
+    </p>
+    <p>
+        In der finalen Phase meines Spiels habe ich noch ein Paar meiner Freunde das Spiel ausprobieren lassen. Insgesamt kam das Spiel gut an und die Schwierigkeit schien angemessen zu sein. Lediglich einige kleinere Änderung nahm ich darauf noch vor.
+    </p>
+    <p>
+        Insgesamt habe ich mein Ziel erreicht. Ich habe ein funktionierendes Videospiel mit Unreal Engine 5 erstellt. Auch konnte ich meine ursprüngliche Idee (siehe Abschnitt 2.1.) verwirklichen.
+    </p>
+    <p>
+        Beim Arbeiten an meinem Spiel habe ich unzählige Dinge gelernt, vom Erstellen von 3D-Modellen über Leveldesign bis zum Programmieren mit Blueprints. Im Vergleich zu damals, als ich zum ersten Mal mit Unreal Engine experimentiert habe, bin ich nun zuversichtlich gestimmt für zukünf-tige Projekte. Möglicherweise werde ich auch Projekte mit anderen Game Engines ausprobieren, wie zum Beispiel Godot oder Untity, in welchen nicht mit Blueprints, sondern mit traditionellem Code programmiert wird. Ausserdem kann ich mir nun ein Studium in Game Design oder in einer ähnlichen Richtung sehr gut vorstellen.
+    </p>
+
+    <h4>Abbildung 21: Freund spielt mein Spiel</h4>
+    <img src="images_maturitaetsarbeit/Abbildung_21.png" alt="">
+    <p class="desc"></p>
+
+
+</body>
+</html>
