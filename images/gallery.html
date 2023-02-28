@@ -1,120 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+    <title>Photo Gallery</title>
 <head>
-    <title>Image Gallery</title>
-
-    <!-- Gallery CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!--Only for demo purpose - no need to add.-->
-    <link rel="stylesheet" href="css/demo.css" />	
+    <link rel="stylesheet" href="gallery_style.css">
 </head>
-
-
 <body>
-    <div class="topnav">
-        <a href="/">Home</a>
-        <a href="/socials">Socials</a>
-        <a href="/projects">Projects</a>
-        <a href="/images/gallery" class="active">Gallery</a>
-        <a href="/contact">Contact</a>
-    </div> 
-<main>
-    <section>
-        <div class="rt-container">
-        <div class="col-rt-12">
-        <div class="Scriptcontent">
-        <section>
-            <!-- Photos by Linus Abegg -->
-            <div class="gallery">
-                
-                <div class="gallery-item item-3x4">
-                    <img class="thumb placeholder" src="files/2022-01_Cat.png" data-src="files/2022-01_Cat.png" data-image="files/2022-01_Cat.png" data-title="Grey Cat (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Grey Cat (Film)</span></div>
-                </div>
+    <h1>Photo Gallery</h1>
+    <div id="photogallery">
+        
+        <!-- Adding the images below should automatically add them to the lightbox -->
+        <img src="files/2022-01_Cat.png" 
+        alt="a fluffy grey cat"
+        class="image"
+        onclick="openLightbox();currentImage(1)">
+        
+        <img src="files/2022-01_EveningStreet.png" 
+        alt="an urban street near Zurich Main Station"
+        class="image"
+        onclick="openLightbox();currentImage(2)">
+        
+        <img src="files/2022-01_Flowers.png" 
+        alt="a bunch of flowers in contrast to the setting sun"
+        class="image"
+        onclick="openLightbox();currentImage(3)">
+        
+        <img src="files/2022-01_Primetower.jpg" 
+        alt="Zurich Prime Tower"
+        class="image"
+        onclick="openLightbox();currentImage(4)">
 
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-01_Chess.png" data-src="files/2022-01_Chess.png" data-image="files/2022-01_Chess.png" data-title="Chess (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Chess (Film)</span></div>
-                </div>
+    </div>
 
-                <div class="gallery-item item-3x4">
-                    <img class="thumb placeholder" src="files/2022-01_Primetower.jpg" data-src="files/2022-01_Primetower.jpg" data-image="files/2022-01_Primetower.jpg" data-title="Prime Tower (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Prime Tower (Film)</span></div>
-                </div>
+    <div id="lightbox">
+        <span id="close-button" onclick="closeLightbox()">&times;</span>
+        
+        <div id="lightbox-content"></div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-01_Rose.png" data-src="files/2022-01_Rose.png" data-image="files/2022-01_Rose.png" data-title="Rose (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Rose (Film)</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-01_Flowers.png" data-src="files/2022-01_Flowers.png" data-image="files/2022-01_Flowers.png" data-title="Flowers (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Flowers (Film)</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-01_ZurichWinter.png" data-src="files/2022-01_ZurichWinter.png" data-image="files/2022-01_ZurichWinter.png" data-title="Zurich In Winter - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Zurich In Winter (Film)</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-01_EveningStreet.png" data-src="files/2022-01_EveningStreet.png" data-image="files/2022-01_EveningStreet.png" data-title="Evening Street (Film) - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Evening Street (Film)</span></div>
-                </div>
-            
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-04_Ant.jpg" data-src="files/2022-04_Ant.jpg" data-image="files/2022-04_Ant.jpg" data-title="Ant - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Ant</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-04_Leaf.jpg" data-src="files/2022-04_Leaf.jpg" data-image="files/2022-04_Leaf.jpg" data-title="Leaf - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Leaf</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-04_RoseFlowers.jpg" data-src="files/2022-04_RoseFlowers.jpg" data-image="files/2022-04_RoseFlowers.jpg" data-title="Rose Flowers - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Rose Flowers</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-04_WaterDroplet.jpg" data-src="files/2022-04_WaterDroplet.jpg" data-image="files/2022-04_WaterDroplet.jpg" data-title="Water Droplet - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Water Droplet</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-04_WaterDroplets.jpg" data-src="files/2022-04_WaterDroplets.jpg" data-image="files/2022-04_WaterDroplets.jpg" data-title="Water Droplets - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Water Droplets</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-05_NixieTubeClockTotal.jpg" data-src="files/2022-05_NixieTubeClockTotal.jpg" data-image="files/2022-05_NixieTubeClockTotal.jpg" data-title="Nixie Tube Clock 1 - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Nixie Tube Clock</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-05_NixieTubeClockClose.jpg" data-src="files/2022-05_NixieTubeClockClose.jpg" data-image="files/2022-05_NixieTubeClockClose.jpg" data-title="Nixie Tube Closeup - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Nixie Tube Closeup</span></div>
-                </div>
-
-                <div class="gallery-item item-4x3">
-                    <img class="thumb placeholder" src="files/2022-08_Ofenpass.jpeg" data-src="files/2022-08_Ofenpass.jpeg" data-image="files/2022-08_Ofenpass.jpeg" data-title="Ofenpass - Photo by Linus Abegg" alt="Photo by Linus Abegg">
-                    <div class="caption"><span>Ofenpass</span></div>
-                </div>
-
-            </div>
-        </section>
-        </div>
-        </div>
-        </div>
-    </section>
-</main>        
-        <!-- jQuery -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-        <!-- Gallery JS -->
-        <script src="js/gallery.js"></script>
-
-        <!-- Analytics -->
+        <div id="caption-container"><p id="caption"></p></div>
+    </div>
 
 </body>
+
+<script>
+
+    let imageElements = document.getElementsByClassName("image");
+    let imgNumTot = imageElements.length
+    let lightboxDiv = document.getElementById("lightbox-content");
+    
+    for (i = 0; i < imageElements.length; i++) {
+
+        let imgDiv = document.createElement("div");
+        imgDiv.className = "lightboxImageDiv";
+        lightboxDiv.appendChild(imgDiv);
+
+        let imgnumDiv = document.createElement("div");
+        imgnumDiv.className = "numberImageDiv";
+        imgEnumTot = (i+1) + " / " + imgNumTot
+        imgnumDiv.innerHTML = imgEnumTot
+        imgDiv.appendChild(imgnumDiv);
+
+        let imgLightbox = document.createElement("img");
+        imgLightbox.src = imageElements[i].src
+        imgLightbox.style = "width: 90%;margin: auto;";
+        imgDiv.appendChild(imgLightbox)
+    }
+
+
+    /*
+    const h2Elements = document.getElementsByTagName('h2');
+    for (let i = 1; i < h2Elements.length; i++) {
+        let listEl = document.createElement("li");
+        let linkEl = document.createElement("a");
+        listEl.id = "content " + i;
+        linkEl.href = "#"+h2Elements[i].id;
+        linkEl.innerHTML = h2Elements[i].innerHTML;
+        document.getElementById("contents").appendChild(listEl);
+        document.getElementById("content " + i).appendChild(linkEl);};
+*/
+
+function openLightbox() {
+  document.getElementById("lightbox").style.display = "block";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+//Hier weiter: https://www.w3schools.com/howto/howto_js_lightbox.asp
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+//    if (slideIndex == imgNumTot+1){slideIndex = 0}
+//    if (slideIndex == -1){slideIndex = imgNumTot}
+    showSlides(slideIndex += n);
+}
+
+function currentImage(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides (n) {
+    let i;
+    let slides = document.getElementsByClassName("lightboxImageDiv");
+    let captions = document.getElementsByClassName("image");
+    let captionText = document.getElementById("caption")
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "grid";
+    captionText.innerHTML = captions[slideIndex-1].alt;
+}
+
+
+</script>
 </html>
