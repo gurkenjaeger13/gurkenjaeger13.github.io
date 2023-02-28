@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Photo Gallery</title>
+<head>
+    <link rel="stylesheet" href="gallery_style.css">
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div id="photogallery">
+        
+        <!-- Adding the images below should automatically add them to the lightbox -->
+        <img src="files/2022-01_Cat.png" 
+        alt="a fluffy grey cat"
+        class="image"
+        onclick="openLightbox();currentImage(1)">
+        
+        <img src="files/2022-01_EveningStreet.png" 
+        alt="an urban street near Zurich Main Station"
+        class="image"
+        onclick="openLightbox();currentImage(2)">
+        
+        <img src="files/2022-01_Flowers.png" 
+        alt="a bunch of flowers in contrast to the setting sun"
+        class="image"
+        onclick="openLightbox();currentImage(3)">
+        
+        <img src="files/2022-01_Primetower.jpg" 
+        alt="Zurich Prime Tower"
+        class="image"
+        onclick="openLightbox();currentImage(4)">
+
+    </div>
+
+    <div id="lightbox">
+        <span id="close-button" onclick="closeLightbox()">&times;</span>
+        
+        <div id="lightbox-content"></div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div id="caption-container"><p id="caption"></p></div>
+    </div>
+
+</body>
+
+<script>
+
+    let imageElements = document.getElementsByClassName("image");
+    let imgNumTot = imageElements.length
+    let lightboxDiv = document.getElementById("lightbox-content");
+    
+    for (i = 0; i < imageElements.length; i++) {
+
+        let imgDiv = document.createElement("div");
+        imgDiv.className = "lightboxImageDiv";
+        lightboxDiv.appendChild(imgDiv);
+
+        let imgnumDiv = document.createElement("div");
+        imgnumDiv.className = "numberImageDiv";
+        imgEnumTot = (i+1) + " / " + imgNumTot
+        imgnumDiv.innerHTML = imgEnumTot
+        imgDiv.appendChild(imgnumDiv);
+
+        let imgLightbox = document.createElement("img");
+        imgLightbox.src = imageElements[i].src
+        imgLightbox.style = "width: 90%;margin: auto;";
+        imgDiv.appendChild(imgLightbox)
+    }
+
+
+    /*
+    const h2Elements = document.getElementsByTagName('h2');
+    for (let i = 1; i < h2Elements.length; i++) {
+        let listEl = document.createElement("li");
+        let linkEl = document.createElement("a");
+        listEl.id = "content " + i;
+        linkEl.href = "#"+h2Elements[i].id;
+        linkEl.innerHTML = h2Elements[i].innerHTML;
+        document.getElementById("contents").appendChild(listEl);
+        document.getElementById("content " + i).appendChild(linkEl);};
+*/
+
+function openLightbox() {
+  document.getElementById("lightbox").style.display = "block";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+//Hier weiter: https://www.w3schools.com/howto/howto_js_lightbox.asp
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+//    if (slideIndex == imgNumTot+1){slideIndex = 0}
+//    if (slideIndex == -1){slideIndex = imgNumTot}
+    showSlides(slideIndex += n);
+}
+
+function currentImage(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides (n) {
+    let i;
+    let slides = document.getElementsByClassName("lightboxImageDiv");
+    let captions = document.getElementsByClassName("image");
+    let captionText = document.getElementById("caption")
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "grid";
+    captionText.innerHTML = captions[slideIndex-1].alt;
+}
+
+
+</script>
+</html>
