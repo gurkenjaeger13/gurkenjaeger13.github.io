@@ -137,7 +137,7 @@ p.footer{
 }
 
 
-@media (max-width: 80em) {
+@media (max-width: 65em) {
   div.inner{
     padding: 20pt 20pt 0pt 20pt;
     margin: 15pt;
