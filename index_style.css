@@ -134,3 +134,18 @@ p.footer{
 ::selection {
     background: rgba(6, 220, 224, 0.459);
 }
+
+
+@media (max-width: 80em) {
+  div.inner{
+    padding: 25pt 25pt 0pt 25pt;
+    margin: 25pt;
+  }
+}
+
+@media (max-width: 35em) {
+  ul.buttons{
+    flex-direction: column;
+    align-items: center;
+  }
+}
