@@ -93,16 +93,13 @@ a.button{
     font-weight: 200;
 
   }
-  a.link{
+  a:link{
     color:rgb(6, 178, 181);
   }
   a.button:link{
     color:rgb(0, 0, 0);
   }
   a:visited{
-    color:rgb(0, 0, 0);
-  }
-  a:link{
     color:rgb(0, 0, 0);
   }
   a:visited{
@@ -113,6 +110,10 @@ a.button{
   }
   a:hover{
     color:rgb(6, 220, 224);
+  }
+  a.button:hover{
+    color:rgb(6, 178, 181);
+    border: solid 1px rgb(6, 178, 181);
   }
   a:focus{
     color:green;
