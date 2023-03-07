@@ -8,6 +8,7 @@
 
 body{
     background-color: #F2F2F2;
+    color: #474747;
 }
 
 div.container{
@@ -24,7 +25,7 @@ main{
     align-content: center;
 }
 
-div.inner{
+div#inner{
     padding: 50pt 50pt 0pt 50pt;
     max-width: 1000px;
     background-color: white;
@@ -38,14 +39,12 @@ h1.title{
     letter-spacing: 5px;
     font-size: 36pt;
     font-weight: 700;
-    color: #474747;
     margin: 10pt 0pt;
 }
 
 p.subtitle{
     font-size: 18pt;
     letter-spacing: 1pt;
-    color: #474747;
     font-family: 'Raleway', sans-serif;
     margin: 10pt 0pt 15pt;
 }
@@ -53,7 +52,6 @@ p.subtitle{
 p.paragraph{
     font-size: 14pt;
     letter-spacing: 1pt;
-    color: #474747;
     margin: 10px 0px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 200;
@@ -82,63 +80,57 @@ a{
     font-weight: 200;
 }
 
+
+a.link{
+    color: rgb(6, 178, 181);
+}
+
 a.button{
     border: solid 1px #CCCCCC;
     border-radius: 10px;
     padding: 15px 30px;
     margin: 20px 0px;
     display: inline-block;
-    color: #474747;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
+}
 
-  }
-  a:link{
-    color:rgb(6, 178, 181);
-  }
-  a.button:link{
-    color:rgb(0, 0, 0);
-  }
-  a:visited{
-    color:rgb(0, 0, 0);
-  }
-  a:visited{
-    color:rgb(6, 178, 181);
-  }
-  a.button:visited{
-    color:rgb(0, 0, 0);
-  }
-  a:hover{
+  a.link:hover{
     color:rgb(6, 220, 224);
   }
   a.button:hover{
     color:rgb(6, 178, 181);
     border: solid 1px rgb(6, 178, 181);
   }
-  a:focus{
-    color:green;
-  }
-  a:active{
-    color:rgb(0, 100, 102);
-  }
+
 
 p.footer{
     text-align: center;
     font-size: 11pt;
     letter-spacing: 0.5pt;
-    color: #474747;
     font-family: 'Raleway', sans-serif;
     padding: 0pt 0pt 20pt 0pt;
+    line-height: 200%;
+}
+
+button#mode-toggle{
+  background-color:rgba(255, 255, 255, 0);
+  border: 0px;
+  font-size: 11pt;
+  letter-spacing: 0.5pt;
+  font-family: 'Raleway', sans-serif;
+  color: #474747;
+}
+
+button#mode-toggle:hover{
+  color:rgb(6, 178, 181);
 }
 
 
-::selection {
-    background: rgba(6, 220, 224, 0.459);
-}
 
 
 @media (max-width: 65em) {
-  div.inner{
+  div#inner{
     padding: 20pt 20pt 0pt 20pt;
     margin: 15pt;
   }
@@ -149,4 +141,28 @@ p.footer{
     flex-direction: column;
     align-items: center;
   }
+}
+
+/*DARKMODE*/
+.darkmode-inner{
+    background-color: rgb(24, 26, 27) !important;
+}
+
+.darkmode-body{
+    color: #e8e6e3;
+    background-color: rgb(31, 34, 35);
+}
+
+
+.darkmode-fontcolor-forced{
+    color: #e8e6e3 !important;
+}
+.darkmode-button-hover:hover{
+    color:rgb(6, 178, 181) !important;
+}
+
+
+
+::selection {
+    background: rgba(6, 220, 224, 0.459);
 }
