@@ -138,8 +138,8 @@ p.footer{
 
 @media (max-width: 80em) {
   div.inner{
-    padding: 25pt 25pt 0pt 25pt;
-    margin: 25pt;
+    padding: 20pt 20pt 0pt 20pt;
+    margin: 15pt;
   }
 }
 
