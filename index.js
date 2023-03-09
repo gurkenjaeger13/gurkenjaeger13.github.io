@@ -5,19 +5,19 @@ console.log("THE COOKIE IS:",document.cookie);
 
 //cookie for first-time-user
 if ( document.cookie == "" ){
-    document.cookie = "lightMode=true";
-    console.log("user had no cookie");
+    document.cookie = "lightMode=true; expires=Thu, 1 Jan 2026 12:00:00 UTC";
+    console.log("User had no cookie");
 }
 
 //if cookie set: change local variable to cookie
-if ( document.cookie == "lightMode=true"){
+else if ( document.cookie.includes("lightMode=true") ){
     console.log("User had lightmode");
 }
-if ( document.cookie == "lightMode=false"){
+else if ( document.cookie.includes("lightMode=false") ){
     console.log("User had darkmode");
     //set website to dark
     lightMode = false;
-    document.cookie = "lightMode=false"; 
+    document.cookie = "lightMode=false; expires=Thu, 1 Jan 2026 12:00:00 UTC"; 
     console.log("Dark triggered");
     (document.getElementById("inner")).classList.add("darkmode-inner");
     (document.getElementById("body")).classList.add("darkmode-body");
@@ -26,15 +26,21 @@ if ( document.cookie == "lightMode=false"){
     let buttons = document.getElementsByClassName("button");
     for (let i=0; i < (document.getElementsByClassName("button")).length; i++ ){
         buttons[i].classList.add("darkmode-fontcolor-forced");
-        buttons[i].classList.add("darkmode-button-hover");}
+        buttons[i].classList.add("darkmode-button-hover");
+    }
 }
+
+else{
+    console.log("User had a cookie, but it was unexpected... Something's wrong here");
+}
+
 
 //Darkmode Function
 function toggleMode(){
     console.log("MODE CHANGE TOGGLED");
     if (lightMode) {
         lightMode = false;
-        document.cookie = "lightMode=false"; 
+        document.cookie = "lightMode=false; expires=Thu, 1 Jan 2026 12:00:00 UTC"; 
         console.log("Dark triggered");
         (document.getElementById("inner")).classList.add("darkmode-inner");
         (document.getElementById("body")).classList.add("darkmode-body");
@@ -49,7 +55,7 @@ function toggleMode(){
 
     else{
         lightMode = true;
-        document.cookie = "lightMode=true";
+        document.cookie = "lightMode=true; expires=Thu, 1 Jan 2026 12:00:00 UTC";
         console.log("Light triggered");
         (document.getElementById("inner")).classList.remove("darkmode-inner");
         (document.getElementById("body")).classList.remove("darkmode-body");
@@ -68,7 +74,7 @@ function toggleMode(){
 
 //Cookie
 function getCookie(){
-    document.cookie
+    return document.cookie
     .split(';')
     .map(cookie => cookie.split('='))
     .reduce((accumulator, [key,value]) =>
