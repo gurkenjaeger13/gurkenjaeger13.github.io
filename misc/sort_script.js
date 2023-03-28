@@ -1,7 +1,39 @@
 let inputElm = document.getElementById("input");
 let outputElm = document.getElementById("output");
+let sampleNums = [40,10,49,9,34,28,22,12,8,38,13,33,2,29,47,3,44,21,17,20,26,24,25,36,30,19,1,39,45,48,15,50,46,14,6,42,23,5,35,27,37,31,18,11,41,4,16,7,43,32
+];
+let running = false;
+
+
+function pasteSample(){
+    inputElm.value = sampleNums;
+}
+
+
+
+const copyContent = async () => {
+    let text = outputElm.value;
+    try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+    } catch (err) {
+    console.error('Failed to copy: ', err);
+    }
+}
+
 
 function sort(){
+    let checkbox = document.getElementById("visualize");
+
+    if (checkbox.checked){
+        sortVisual();
+    }
+    else{
+        sortNonvisual();
+    }
+}
+
+function sortNonvisual(){
     let rawNums = inputElm.value; //get the input from the box
     //convert the inputed numbers to an array (remove space, split at commas)
     let convNums = rawNums.replace(/\s/g, '').split(",").map(Number);
@@ -17,56 +49,50 @@ function sort(){
         }
     }
     outputElm.value = convNums
-    console.log(convNums)
 }
 
 function sortVisual(){
-    let rawNums = inputElm.value; //get the input from the box
-    //convert the inputed numbers to an array (remove space, split at commas)
-    let convNums = rawNums.replace(/\s/g, '').split(",").map(Number);
-    //for bar-color
-    let numsColor =  [...convNums];
-    let bordColor = [...convNums];
-    let maxNum = Math.max(...convNums);
-    let delay = 5000/((convNums.length)**2/4);
-    console.log(delay);
+    if (!running){
+        running = true;
+        let rawNums = inputElm.value; //get the input from the box
+        //convert the inputed numbers to an array (remove space, split at commas)
+        let convNums = rawNums.replace(/\s/g, '').split(",").map(Number);
+        //for bar-color
+        let numsColor =  [...convNums];
+        let bordColor = [...convNums];
+        let maxNum = Math.max(...convNums);
+        let delay = 5000/((convNums.length)**2/4);
 
-    const timer = ms => new Promise(res => setTimeout(res, ms))
+        const timer = ms => new Promise(res => setTimeout(res, ms))
 
-    async function load () { // We need to wrap the loop into an async function for this to work
-        //bubble-sort
-        for (let i=0; i < convNums.length; i++){
-            for (let j=0; j < (convNums.length-1-i); j++) {
-                if (convNums[j] > convNums[j+1]) {//if the first number is bigger than the second, swap them
-                    let x = convNums[j]
-                    convNums[j] = convNums[j+1]
-                    convNums[j+1] = x
-                    console.log("SORTING...")
-                    myChart.data.labels = convNums;
-                    myChart.data.datasets[0].data = convNums;
-                    //CALCULATE NEW COLORS
-                    for (let k=0; k < convNums.length; k++){
-                        numsColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,0.66)';
-                        bordColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,1)';
+        async function load () {
+            //bubble-sort
+            for (let i=0; i < convNums.length; i++){
+                for (let j=0; j < (convNums.length-1-i); j++) {
+                    if (convNums[j] > convNums[j+1]) {//if the first number is bigger than the second, swap them
+                        let x = convNums[j]
+                        convNums[j] = convNums[j+1]
+                        convNums[j+1] = x
+                        myChart.data.labels = convNums;
+                        myChart.data.datasets[0].data = convNums;
+                        //CALCULATE NEW COLORS
+                        for (let k=0; k < convNums.length; k++){
+                            numsColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,0.66)';
+                            bordColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,1)';
+                        }
+                        myChart.data.datasets[0].backgroundColor = numsColor;
+                        myChart.data.datasets[0].borderColor = bordColor;
+                        //update chart
+                        myChart.update('none');
+                        await timer(delay);
                     }
-                    myChart.data.datasets[0].backgroundColor = numsColor;
-                    myChart.data.datasets[0].borderColor = bordColor;
-                    //update chart
-                    myChart.update('none');
-                    await timer(delay);
                 }
             }
+            outputElm.value = convNums;
+            running = false
         }
-        outputElm.value = convNums;
-        console.log(convNums);
-        console.log(numsColor);
-        console.log(typeof(numsColor));
+        load();
     }
-
-    load();
-
-
-
 }
 
 
@@ -104,7 +130,9 @@ let myChart = new Chart(ctx, {
       x: {
         display: false
       },
-    }
+    },
+    responsive: true,
+    maintainAspectRatio: false
   }
 });
 

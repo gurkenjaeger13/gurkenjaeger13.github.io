@@ -1,20 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+*{
+    font-size: 14pt;
+    letter-spacing: 1pt;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
+
 .main-div {
     display: flex;
     justify-content: center;
+    /*margin: 0rem 10rem;*/
+    margin: auto;
+    max-width: 1000px;
 }
 
 .vis-div {
     display: flex;
     justify-content: center;
-    max-width: 800px;
+    width: 100%;
+    height: 400px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .input-output {
     display: grid;
+    width: 100%;
     padding: 20px 20px 20px 20px;
     /*border: 2px solid lightblue;*/
 }
 h1 {
     text-align: center;
+    font-size: 36pt;
+}
+
+textarea {
+    height: 100pt;
+}
+
+canvas {
+    padding: 20px;
+}
+
+.buttonmisc{
+    margin: 0px 5px;
+}
+
+
+
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: #555555dd;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -250px;
+    font-size: 12pt;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -14px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+
+.popuptext a {
+    color: aqua;
+    text-decoration: none;
+}
+
+.popuptext a:hover{
+    color: rgb(0, 166, 255);
 }

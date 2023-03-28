@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sort</title>
+    <title>Bubble Sort</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios-glyphs/30/000000/foam-bubbles.png">
     <link rel="stylesheet" href="sort_style.css">
 </head>
 
@@ -14,19 +15,37 @@ Sample numbers:
 -->
 
 <body>
-<h1>Sort Numbers</h1>
+<h1>Bubble Sorter</h1>
 
     <div class="main-div">
         <div class="input-output">
-            <textarea id="input" name="input" rows="8" cols="50">Enter the numbers you want to sort, separated by commas</textarea>
-            <br>
-            <button onclick="sortVisual()">Sort Numbers</button>
+            <textarea id="input" onclick="this.select();" name="input">Enter the numbers you want to sort, separated by commas (replace this text)</textarea>
+            <button onclick="sort();">Sort Numbers</button>
         </div>
         <div class="input-output">
-            <textarea id="output" name="output" rows="8" cols="50" autocomplete=off>The sorted numbers will appear here</textarea>
-            <button onclick="console.log('copy button was pressed')">Copy</button>
+            <textarea id="output" name="output" autocomplete=off>The sorted numbers will appear here</textarea>
+            <button onclick="copyContent()">Copy</button>
         </div>
     </div>
+    <div class="main-div">
+        <p>Visualize (this has a big impact on performance!)</p>
+        <input type="checkbox" id="visualize" name="visualize" value="Boat">
+    </div>
+
+    <div class="main-div">
+        <button class="buttonmisc" onclick="pasteSample();">Paste sample numbers</button>
+        <button class="buttonmisc popup" onclick="myFunction();">Info
+            <span class="popuptext" id="myPopup">
+                - The visualization is the fastest and smoothest in Google Chrome   <br>
+                - Chart.js is used for the visulization<br>
+                - Sorting only continues when the tab is active<br>
+                - The "Sample Numbers" are a predefined array of all numbers from 1 to 50 in random order<br>
+                - At some point the visualization reaches it's maximum speed. This makes this visualizer not useful for sorting a very large amount of numbers (<200)<br>
+                <br>(Popup base by <a target="_blank" href="https://www.w3schools.com/howto/howto_js_popup.asp">w3schools.com</a>)
+            </span>
+        </button>
+    </div>
+
 
     <div class="vis-div">
         <canvas id="myChart"></canvas>
@@ -34,6 +53,16 @@ Sample numbers:
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="sort_script.js"></script>
+
+
+
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+        </script>
 
 </body>
 </html>
