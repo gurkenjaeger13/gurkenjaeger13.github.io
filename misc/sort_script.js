@@ -1,14 +1,35 @@
 let inputElm = document.getElementById("input");
 let outputElm = document.getElementById("output");
-let sampleNums = [40,10,49,9,34,28,22,12,8,38,13,33,2,29,47,3,44,21,17,20,26,24,25,36,30,19,1,39,45,48,15,50,46,14,6,42,23,5,35,27,37,31,18,11,41,4,16,7,43,32
-];
+let sampleBest = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50];
+let sampleWorts = [50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
+
 let running = false;
 
 
-function pasteSample(){
-    inputElm.value = sampleNums;
+function pasteRand(){
+    // uses the Fisher–Yates shuffle
+    sampleRand = [...sampleBest];
+    let m = sampleRand.length, t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+  
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+  
+      // And swap it with the current element.
+      t = sampleRand[m];
+      sampleRand[m] = sampleRand[i];
+      sampleRand[i] = t;
+    }
+    inputElm.value = sampleRand;
 }
 
+function pasteBest(){
+    inputElm.value = sampleBest;
+}
+function pasteWorst(){
+    inputElm.value = sampleWorts;
+}
 
 
 const copyContent = async () => {
@@ -66,6 +87,19 @@ function sortVisual(){
         const timer = ms => new Promise(res => setTimeout(res, ms))
 
         async function load () {
+            myChart.data.labels = convNums;
+            myChart.data.datasets[0].data = convNums;
+            //CALCULATE NEW COLORS
+            for (let k=0; k < convNums.length; k++){
+                numsColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,0.66)';
+                bordColor[k] = 'rgba(120,' + 255/maxNum*convNums[k] + ',255,1)';
+            }
+            myChart.data.datasets[0].backgroundColor = numsColor;
+            myChart.data.datasets[0].borderColor = bordColor;
+            //update chart
+            myChart.update('none');
+            await timer(delay);
+            
             //bubble-sort
             for (let i=0; i < convNums.length; i++){
                 for (let j=0; j < (convNums.length-1-i); j++) {
