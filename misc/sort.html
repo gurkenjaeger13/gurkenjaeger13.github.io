@@ -27,7 +27,11 @@
     </div>
 
     <div class="main-div">
-        <button class="buttonmisc" onclick="pasteSample();">Paste sample numbers</button>
+        <p style="margin: 0px">Paste sample:</p>
+        <button class="buttonmisc" onclick="pasteRand();">Random</button>
+        <button class="buttonmisc" onclick="pasteBest();">Best</button>
+        <button class="buttonmisc" onclick="pasteWorst();">Worst</button>
+        <p style="margin: 0px">-</p>
         <button class="buttonmisc popup" onclick="togglePopup();">Info
             <span class="popuptext" id="myPopup">
                 - The visualization is the fastest and smoothest in Google Chrome   <br>
@@ -35,6 +39,7 @@
                 - Sorting only continues when the tab is active<br>
                 - The "Sample Numbers" are a predefined array of all numbers from 1 to 50 in random order<br>
                 - At some point the visualization reaches it's maximum speed. This makes this visualizer not useful for sorting a very large amount of numbers (<200)<br>
+                - For the random sample array, the best case array is shuffeled using the "Fisher-Yates shuffle"<br>
                 <br>(Popup base by <a target="_blank" href="https://www.w3schools.com/howto/howto_js_popup.asp">w3schools.com</a>)
             </span>
         </button>
