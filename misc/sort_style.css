@@ -37,6 +37,7 @@ h1 {
 
 textarea {
     height: 100pt;
+    resize: none;
 }
 
 canvas {
@@ -50,16 +51,15 @@ canvas {
 
 
 
+/* Popup (by w3schools.com) */
 
-/* Popup container */
 .popup {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+}
   
-  /* The actual popup (appears on top) */
-  .popup .popuptext {
+.popup .popuptext {
     visibility: hidden;
     width: 500px;
     background-color: #555555dd;
@@ -73,10 +73,9 @@ canvas {
     left: 50%;
     margin-left: -250px;
     font-size: 12pt;
-  }
+}
   
-  /* Popup arrow */
-  .popup .popuptext::after {
+.popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -85,14 +84,11 @@ canvas {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
+}
   
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
+.popup .show {
     visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-  }
+}
 
 .popuptext a {
     color: aqua;
