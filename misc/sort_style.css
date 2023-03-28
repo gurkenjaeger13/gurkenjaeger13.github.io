@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
+
 *{
     font-size: 14pt;
     letter-spacing: 1pt;
@@ -12,15 +13,15 @@
     justify-content: center;
     /*margin: 0rem 10rem;*/
     margin: auto;
-    max-width: 1000px;
+    max-width: 100vmin;
 }
 
 .vis-div {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 400px;
-    max-width: 1000px;
+    height: 50vmin;
+    max-width: 100vmin;
     margin: auto;
 }
 
@@ -38,16 +39,29 @@ h1 {
 textarea {
     height: 100pt;
     resize: none;
+    border: 1px solid #d9d9d9; /* Green */
+    border-radius: 5px;
+    padding: 5pt;
 }
 
-canvas {
-    padding: 20px;
+button{
+    background-color: rgba(0, 0, 0, 0.043);
+    color: black;
+    border: 1px solid #d9d9d9; /* Green */
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .buttonmisc{
     margin: 0px 5px;
 }
 
+canvas {
+    padding: 20px;
+}
 
 
 
@@ -98,3 +112,9 @@ canvas {
 .popuptext a:hover{
     color: rgb(0, 166, 255);
 }
+
+/*
+@media(max-width:"800px"){
+
+};
+*/
