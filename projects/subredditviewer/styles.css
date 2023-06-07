@@ -21,10 +21,16 @@
 
 #gallery{
     display: block;
-    column-count: 1; /* Will be modified by script.js */
     column-gap: 0;
     text-align: center;
 }
+.gallery-big{
+    column-count: 4;
+}
+.gallery-small{
+    column-count: 1;
+}
+
 .img{
     width: 100%;
     display: block;
@@ -57,12 +63,15 @@ input {
 
 /* mobile devices / low resoultion */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #header{
         flex-direction: column;
         padding: 1rem 1rem;
     }
     .subelm {
         padding: 0.5rem;
+    }
+    .gallery-big{
+        column-count: 2;
     }
 }
