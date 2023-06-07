@@ -5,6 +5,15 @@
 const galleryDiv = document.getElementById('gallery');
 
 async function subredditGallery() {
+    // display less colums if the user has a smaller screen
+    const deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    let colums;
+    if (deviceWidth<700){
+        colums = 2;
+    } else{
+        colums = 4;
+    }
+
     // remove old images
     galleryDiv.style.columnCount = 1;
     galleryDiv.innerHTML = '<br>Loading Posts...';
@@ -29,7 +38,7 @@ async function subredditGallery() {
     subsElm.innerHTML = images[0].data.subreddit_subscribers;
     
     galleryDiv.innerHTML = '';
-    galleryDiv.style.columnCount = 4;
+    galleryDiv.style.columnCount = colums;
     // for-loop to add the img elms
     for (let i=0; i<images.length; i++){
         // get img url

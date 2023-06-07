@@ -47,9 +47,22 @@ p {
 button {
     background-color: #212529;
     margin: 0 0.5rem;
+    margin-right: 0;
     border-width: 2px;
     border-radius: 4px;
 }
 input {
     color: black;
+}
+
+/* mobile devices / low resoultion */
+
+@media screen and (max-width: 600px) {
+    #header{
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+    .subelm {
+        padding: 0.5rem;
+    }
 }
