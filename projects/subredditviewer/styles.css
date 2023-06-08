@@ -19,7 +19,7 @@
 }
 
 
-#gallery{
+.gallery{
     display: block;
     column-gap: 0;
     text-align: center;

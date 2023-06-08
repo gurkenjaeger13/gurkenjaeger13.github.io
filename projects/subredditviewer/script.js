@@ -2,7 +2,7 @@
 // The images should be styled so they take up all the space and adapt nicely, like at waifu.im
 
 // the target container of the images
-const galleryDiv = document.getElementById('gallery');
+const galleryDiv = document.getElementsByClassName('gallery')[document.getElementsByClassName('gallery').length-1];
 
 async function subredditGallery() {
 
@@ -44,19 +44,23 @@ async function subredditGallery() {
         // check if url is img
         //  |-what it can include-----------------------------------------------------------------------------------------|     |-what it can't include----|
         if (((imageUrl.includes('.jpg') || imageUrl.includes('.png') || imageUrl.includes('.gif') || imageUrl.includes('.gifv'))) && !(imageUrl.includes('imgur')) || ((imageUrl.includes('imgur')) && imageUrl.includes('.gifv'))){
+            
             // special case for imgur gifs:
             if (imageUrl.includes('imgur') && imageUrl.includes('.gifv')){
                 imageUrl = imageUrl.split('.gifv')[0]+'.gif'
             }
+
             // create the img element
             let imageElm = document.createElement('img');
             imageElm.src = imageUrl;
-            imageElm.classList.add('img')
+            imageElm.classList.add('img');
+            imageElm.id = 'img '+i;
 
             // add img to the dom
             galleryDiv.appendChild(imageElm);
         }
     }
+    // in case of no images for subreddit
     if (galleryDiv.innerHTML === ''){
         galleryDiv.classList.remove('gallery-big')
         galleryDiv.classList.add('gallery-small')
