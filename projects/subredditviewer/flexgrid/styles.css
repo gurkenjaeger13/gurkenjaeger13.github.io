@@ -1,0 +1,10 @@
+.grid-item{
+    width: 25%;
+    margin: 0;
+}
+
+.img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
